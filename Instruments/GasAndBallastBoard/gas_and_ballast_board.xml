@@ -1,0 +1,1250 @@
+<?xml version="1.0"?>
+<!--
+Zeppelin LZ 121 "Nordstern" airship for FlightGear.
+
+Copyright (C) 2011  Anders Gidenstam  (anders(at)gidenstam.org)
+This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+	
+	<!-- Overlay these to set the controlling properties.
+	-->
+	<params>
+		<!-- Gas valve toggles, fore to aft. -->
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[0]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[1]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[2]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[3]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[4]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[5]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[6]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[7]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[8]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[9]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[10]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[11]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[12]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[13]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[14]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[15]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[16]</gas-valve-cmd-norm>
+		<gas-valve-cmd-norm>controls/gas/valve-cmd-norm[17]</gas-valve-cmd-norm>
+		<!-- Landing ballast toggles, fore (6) to aft (4) and left to right. -->
+		<release-ballast>controls/ballast/release[0]</release-ballast>
+		<release-ballast>controls/ballast/release[1]</release-ballast>
+		<release-ballast>controls/ballast/release[2]</release-ballast>
+		<release-ballast>controls/ballast/release[3]</release-ballast>
+		<release-ballast>controls/ballast/release[4]</release-ballast>
+		<release-ballast>controls/ballast/release[5]</release-ballast>
+		<release-ballast>controls/ballast/release[6]</release-ballast>
+		<release-ballast>controls/ballast/release[7]</release-ballast>
+		<release-ballast>controls/ballast/release[8]</release-ballast>
+		<release-ballast>controls/ballast/release[9]</release-ballast>
+	</params>
+	
+	<path>gas_and_ballast_board.ac</path>
+	
+	<offsets>
+		<!-- x/y/z == back/right/up -->
+		<x-m> 0.000 </x-m>
+		<y-m> 0.000 </y-m>
+		<z-m> 0.000 </z-m>
+	</offsets>
+	
+	<!-- Gas toggles -->
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.001</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[0]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.001</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[0]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.002</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[1]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.002</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[1]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.003</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[2]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.003</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[2]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.004</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[3]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.004</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[3]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.005</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[4]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.005</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[4]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.006</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[5]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.006</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[5]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.007</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[6]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.007</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[6]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.008</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[7]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.008</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[7]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.009</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[8]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.009</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[8]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.010</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[9]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.010</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[9]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.011</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[10]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.011</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[10]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.012</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[11]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.012</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[11]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.013</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[12]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.013</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[12]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.014</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[13]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.014</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[13]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.015</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[14]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.015</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[14]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.016</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[15]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.016</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[15]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>gas_toggle.017</object-name>
+		<property alias="../../params/gas-valve-cmd-norm[16]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>gas_toggle.017</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-cycle</command>
+				<property alias="../../../../params/gas-valve-cmd-norm[16]"/>
+				<value type="double">0.0</value>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<!-- Ballast toggles -->
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.L1</object-name>
+		<property alias="../../params/release-ballast[0]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.L1</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[0]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.R1</object-name>
+		<property alias="../../params/release-ballast[1]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.R1</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[1]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.L2</object-name>
+		<property alias="../../params/release-ballast[2]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.L2</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[2]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.R2</object-name>
+		<property alias="../../params/release-ballast[3]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.R2</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[3]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.L3</object-name>
+		<property alias="../../params/release-ballast[4]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.L3</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[4]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.R3</object-name>
+		<property alias="../../params/release-ballast[5]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.R3</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[5]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.L4</object-name>
+		<property alias="../../params/release-ballast[6]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.L4</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[6]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.R4</object-name>
+		<property alias="../../params/release-ballast[7]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.R4</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[7]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.L5</object-name>
+		<property alias="../../params/release-ballast[8]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.L5</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[8]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	
+	<animation>
+		<type>translate</type>
+		<object-name>ballast_toggle.R5</object-name>
+		<property alias="../../params/release-ballast[9]"/>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1.0</ind>
+				<dep>-0.15</dep>
+			</entry>
+		</interpolation>
+	</animation>
+	<animation>
+		<type>pick</type>
+		<object-name>ballast_toggle.R5</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-assign</command>
+				<property alias="../../../../params/release-ballast[9]"/>
+				<value type="double">1.0</value>
+			</binding>
+		</action>
+	</animation>
+	<model>
+		<name>GSC0</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.00 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[0]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC1</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.05 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[1]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC2</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.10 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[2]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC3</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.15 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[3]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC4</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.20 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[4]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC5</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.25 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[5]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC6</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.30 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[6]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC7</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.35 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[7]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC8</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.40 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[8]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC9</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.45 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[9]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC10</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.50 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[10]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC11</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.55 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[11]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC12</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.60 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[12]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC13</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.65 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[13]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC14</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.70 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[14]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC15</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.75 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[15]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>GSC16</name>
+		<path>Aircraft/L30/Instruments/Parts/Leuchte.xml</path>
+		<offsets>
+			<x-m>  0.80 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.06</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/gas/overpressure[16]</state>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<animation>
+		<type>noshadow</type>
+	</animation>
+	
+</PropertyList>

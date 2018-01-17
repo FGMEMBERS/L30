@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+
+<!-- altimeter -->
+<PropertyList> 
+	
+	<path>altimeter.ac</path>
+	
+	<offsets>
+		<!-- x/y/z == back/right/up -->
+		<x-m> 0.000 </x-m>
+		<y-m> 0.000 </y-m>
+		<z-m> 0.000 </z-m>
+	</offsets>
+	
+	<!-- Rembrandt transparency markup. -->
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>glass.001</object-name>
+		<object-name>glass.002</object-name>
+		<object-name>glass.003</object-name>
+		<object-name>card2</object-name>
+		<object-name>Cylinder.000</object-name>
+		<object-name>Cylinder.003</object-name>
+	</effect>
+	
+	<animation> 
+		<type>rotate</type>
+		<object-name>needle_alt</object-name>
+		<property>instrumentation/altimeter/indicated-altitude-ft</property>
+		<interpolation>
+			<entry><ind>     0 </ind><dep>   0 </dep></entry>
+			<entry><ind> 22965.88 </ind><dep> -350 </dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m> -0.01096 </x1-m>
+			<y1-m>  0.00    </y1-m>
+			<z1-m>  0.14925 </z1-m>
+			<x2-m>  0.00783 </x2-m>
+			<y2-m>  0.00    </y2-m>
+			<z2-m>  0.15609 </z2-m>
+		</axis>
+	</animation>
+	
+	<animation> 
+		<type>rotate</type>
+		<object-name>needle.defL</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry><ind> -1</ind><dep> -90 </dep></entry>
+			<entry><ind>  0</ind><dep>   0 </dep></entry>
+			<entry><ind>  1</ind><dep>  90 </dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>  0.02202 </x1-m>
+			<y1-m> -0.17103 </y1-m>
+			<z1-m>  0.04459 </z1-m>
+			<x2-m>  0.04081 </x2-m>
+			<y2-m> -0.17103 </y2-m>
+			<z2-m>  0.05142 </z2-m>
+		</axis>
+	</animation>
+	
+	<animation> 
+		<type>rotate</type>
+		<object-name>needle.defR</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<interpolation>
+			<entry><ind> -1</ind><dep> -90 </dep></entry>
+			<entry><ind>  0</ind><dep>   0 </dep></entry>
+			<entry><ind>  1</ind><dep>  90 </dep></entry>
+		</interpolation>
+		<axis>
+			<x1-m>  0.02202 </x1-m>
+			<y1-m>  0.17103 </y1-m>
+			<z1-m>  0.04459 </z1-m>
+			<x2-m>  0.04081 </x2-m>
+			<y2-m>  0.17103 </y2-m>
+			<z2-m>  0.05142 </z2-m>
+		</axis>
+	</animation>
+
+	<animation> 
+		<type>material</type>
+		<object-name>card2</object-name>
+		<object-name>Cylinder.000</object-name>
+		<object-name>Cylinder.003</object-name>
+		<emission> 
+			<factor-prop>controls/lighting/panel-norm</factor-prop>
+			<red>0.75</red>
+			<green>0.25</green>
+			<blue>0.25</blue>
+		</emission>
+	</animation>
+	
+</PropertyList>

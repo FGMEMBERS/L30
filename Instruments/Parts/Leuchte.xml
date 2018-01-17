@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<parameters>
+		<state>controls/gas/overpressure[0]</state>
+	</parameters>
+	<path>Leuchte.ac</path>
+	<offsets>
+		<!-- x/y/z == back/right/up -->
+		<x-m> 0.000 </x-m>
+		<y-m> 0.000 </y-m>
+		<z-m> 0.000 </z-m>
+	</offsets>
+	<!-- Rembrandt transparency markup. -->
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>Glas</object-name>
+		<object-name>Lampe</object-name>
+	</effect>
+	<animation>
+		<type>material</type>
+		<object-name>Lampe</object-name>
+		<condition>
+			<equals>
+				<property alias="../../../../parameters/state" />
+				<value>0</value>	
+			</equals>
+		</condition>
+		<emission>
+			<red>0</red>	
+			<green>1</green>	
+			<blue>0</blue>	
+		</emission>
+	</animation>
+	<animation>
+		<type>material</type>
+		<object-name>Lampe</object-name>
+		<condition>
+			<equals>
+				<property alias="../../../../parameters/state" />
+				<value>1</value>	
+			</equals>
+		</condition>
+		<emission>
+			<red>1</red>	
+			<green>0</green>	
+			<blue>0</blue>	
+		</emission>
+	</animation>
+</PropertyList>

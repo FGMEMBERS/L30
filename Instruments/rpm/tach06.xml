@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>tach.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <object-name>visses</object-name>
+
+    <object-name>vitre</object-name>
+  </animation>
+
+  <!-- working for Rembrandt -->
+  <effect>
+	<inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>vitre</object-name>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+  </effect>
+  
+  <animation> 
+    <type>material</type>
+    <object-name>face</object-name>
+    <object-name>needle</object-name>
+    <emission>
+	  <factor-prop>controls/lighting/panel-norm</factor-prop>
+      <red>   0.2 </red>
+      <green> 0.1 </green>
+      <blue>  0.1 </blue>
+    </emission>
+  </animation>
+
+  <animation> 
+    <type>rotate</type>
+    <object-name>needle</object-name>
+    <property>engines/engine[5]/rpm</property>
+    <interpolation>
+      <entry><ind>    0 </ind><dep>    0 </dep></entry>
+      <entry><ind>  650 </ind><dep>  -90 </dep></entry>
+      <entry><ind>  942 </ind><dep> -180 </dep></entry>
+      <entry><ind> 1230 </ind><dep> -270 </dep></entry>
+      <entry><ind> 1630 </ind><dep> -360 </dep></entry>
+    </interpolation>
+    <axis> 
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+</PropertyList>

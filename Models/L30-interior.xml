@@ -1,0 +1,495 @@
+<?xml version="1.0"?>
+<!--
+Zeppelin LZ 121 "Nordstern" airship for FlightGear.
+
+Copyright (C) 2010 - 2015  Anders Gidenstam  (anders(at)gidenstam.org)
+This file is licensed under the GPL license version 2 or later.
+-->
+<PropertyList>
+	
+	<path>interior.ac</path>
+	<offsets>
+		<x-m>   0.0 </x-m>
+		<y-m>   0.0 </y-m>
+		<z-m>   0.0 </z-m>
+	</offsets>
+	
+	<!-- Alpha-test for opaque alpha textured objects.
+	<effect>
+	<inherits-from>Models/Effects/opaque-alpha-test</inherits-from>
+	<object-name>car_girders</object-name>
+	<object-name>car_hgirders</object-name>
+	</effect>
+	-->
+	<!-- Rembrandt transparency markup. -->
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>InnenlampeGlas</object-name>
+		<object-name>InnenlampeGlas.001</object-name>
+		<object-name>InnenlampeGlas.002</object-name>
+	</effect>
+	<animation>
+		<type>noshadow</type>
+		<object-name>InnenlampeGlas</object-name>
+		<object-name>InnenlampeGlas.001</object-name>
+		<object-name>InnenlampeGlas.002</object-name>
+	</animation>
+
+	<model>
+		<name>Rudder wheel</name>
+		<path>Aircraft/L30/Models/wheel.ac</path>
+		<offsets>
+			<x-m>  0.58948 </x-m>
+			<y-m>  0.00000 </y-m>
+			<z-m>  0.38000 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Rudder Man</name>
+		<path>Aircraft/L30/Models/GroundCrew/crew.xml</path>
+		<offsets>
+			<x-m>  1.040 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -0.420 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Magnetic compass</name>
+		<path>Aircraft/L30/Instruments/MagneticCompass/compass.xml</path>
+		<offsets>
+			<x-m>  0.32012 </x-m>
+			<y-m>  0.00000 </y-m>
+			<z-m>  0.45000 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Hase variometer</name>
+		<path>Aircraft/L30/Instruments/Variometer/variometer.xml</path>
+		<offsets>
+			<x-m>  3.10 </x-m>
+			<y-m> -1.45 </y-m>
+			<z-m>  1.34 </z-m>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+	</model>
+<!--
+	<model>
+		<name>Watch Officer</name>
+		<path>Aircraft/L30/Models/GroundCrew/crew.xml</path>
+		<offsets>
+			<x-m>  1.01 </x-m>
+			<y-m> -0.53 </y-m>
+			<z-m> -0.97 </z-m>
+			<heading-deg>36.0</heading-deg>
+		</offsets>
+	</model>
+	-->
+	<model>
+		<name>Elevator wheel</name>
+		<path>Aircraft/L30/Models/wheel.ac</path>
+		<offsets>
+			<x-m>  2.77424 </x-m>
+			<y-m> -0.86843 </y-m>
+			<z-m>  0.35000 </z-m>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Elevator Man</name>
+		<path>Aircraft/L30/Models/GroundCrew/crew.xml</path>
+		<offsets>
+			<x-m>  2.77424 </x-m>
+			<y-m> -0.54 </y-m>
+			<z-m> -0.42 </z-m>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Tachometer</name>
+		<path>Aircraft/L30/Instruments/Airspeed/asi.xml</path>
+		<offsets>
+			<x-m>  2.18822 </x-m>
+			<y-m>  0.98457 </y-m>
+			<z-m>  0.450 </z-m>
+			<heading-deg>112.0</heading-deg>
+		</offsets>
+	</model>
+
+
+	<model>
+		<name>MachineTelegraph</name>
+		<path>Aircraft/L30/Instruments/MTelegraph/telegraf.xml</path>
+		<offsets>
+			<x-m>  2.35529 </x-m>
+			<y-m>  1.24444 </y-m>
+			<z-m>  1.68063 </z-m>
+		</offsets>
+	</model>
+<!--
+	<model>
+		<name>Machinist</name>
+		<path>Aircraft/L30/Models/GroundCrew/crew.xml</path>
+		<offsets>
+			<x-m>  2.10 </x-m>
+			<y-m>  0.35 </y-m>
+			<z-m> -0.97 </z-m>
+			<heading-deg>-90.0</heading-deg>
+		</offsets>
+	</model>
+-->
+	<model>
+		<name>Altimeter</name>
+		<path>Aircraft/L30/Instruments/Altimeter/alt.xml</path>
+		<offsets>
+			<x-m>  2.79233 </x-m>
+			<y-m> -1.09851 </y-m>
+			<z-m>  0.54126 </z-m>
+			<heading-deg>90</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>5deg inclinometer</name>
+		<path>Aircraft/L30/Instruments/Inclinometers/inclinometer_5deg.xml</path>
+		<offsets>
+			<x-m>  2.79233 </x-m>
+			<y-m> -1.025 </y-m>
+			<z-m>  0.51221 </z-m>
+			<heading-deg>90.0</heading-deg>
+			<pitch-deg>-20.0</pitch-deg>
+		</offsets>
+	</model>
+	
+	<model>
+		<name>20deg inclinometer</name>
+		<path>Aircraft/L30/Instruments/Inclinometers/inclinometer_20deg.xml</path>
+		<offsets>
+			<x-m>  2.79233 </x-m>
+			<y-m> -1.045 </y-m>
+			<z-m>  0.56942 </z-m>
+			<heading-deg>90.0</heading-deg>
+			<pitch-deg>-20.0</pitch-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Gas and ballast board</name>
+		<path>Aircraft/L30/Instruments/GasAndBallastBoard/gas_and_ballast_board.xml</path>
+		<offsets>
+			<x-m>  2.7 </x-m>
+			<y-m> -1.2 </y-m>
+			<z-m>  1.5031 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Bomb board</name>
+		<path>Aircraft/L30/Instruments/BombPanel/bombpanel.xml</path>
+		<offsets>
+			<x-m>  1.250 </x-m>
+			<y-m>  1.200 </y-m>
+			<z-m>  0.455 </z-m>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Bombsight</name>
+		<path>Aircraft/L30/Instruments/Sight/sight.xml</path>
+		<offsets>
+			<x-m>  0.68 </x-m>
+			<y-m>  1.27 </y-m>
+			<z-m>  0.465 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Wireless Station</name>
+		<path>Aircraft/L30/Models/funkanlage.ac</path>
+		<offsets>
+			<x-m>  7.52 </x-m>
+			<y-m> -0.51 </y-m>
+			<z-m> -0.42000 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Lightswitch</name>
+		<path>Aircraft/L30/Instruments/Knob/knob.xml</path>
+		<offsets>
+			<x-m>  0.10 </x-m>
+			<y-m> -0.25 </y-m>
+			<z-m>  0.45542 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/panel-norm</state>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>Landingswitch</name>
+		<path>Aircraft/L30/Instruments/Knob/knob.xml</path>
+		<offsets>
+			<x-m>  0.10 </x-m>
+			<y-m>  0.25 </y-m>
+			<z-m>  0.45542 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/landing-light</state>
+			</parameters>
+		</overlay>
+	</model>
+
+	<model>
+		<name>Drehzahlmesser</name>
+		<path>Aircraft/L30/Instruments/rpm/tach01.xml</path>
+		<offsets>
+			<x-m> 12.54 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.50 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>Rudder wheel</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>-250.0</factor>
+		<center>
+			<x-m>  0.58948 </x-m>
+			<y-m>  0.00000 </y-m>
+			<z-m>  0.38000 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>Elevator wheel</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>-250.0</factor>
+		<center>
+			<x-m>  2.77424 </x-m>
+			<y-m> -0.86843 </y-m>
+			<z-m>  0.35000 </z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>TrennDoor</object-name>
+		<object-name>DoorKnob</object-name>
+		<property>sim/model/door-positions/TDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-0.5</dep>
+			</entry>
+		</interpolation>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>DoorKnob</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>L30.openCabinDoors();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<model>
+		<name>Room Light1</name>
+		<path>Aircraft/L30/Models/light/roomlight.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>Room Light1</object-name>
+		<type>select</type>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
+	</animation>
+	<model>
+		<name>Switch Light1</name>
+		<path>Aircraft/L30/Instruments/Parts/switch.xml</path>
+		<offsets>
+			<x-m>  5.50647</x-m>
+			<y-m> -0.10</y-m>
+			<z-m>  0.60</z-m>
+			<roll-deg>90.0</roll-deg>
+			<heading-deg>-90.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/room-light[0]</state>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>Room Light2</name>
+		<path>Aircraft/L30/Models/light/roomlight2.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>Room Light2</object-name>
+		<type>select</type>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
+	</animation>
+	<model>
+		<name>Switch Light2</name>
+		<path>Aircraft/L30/Instruments/Parts/switch.xml</path>
+		<offsets>
+			<x-m>  6.80</x-m>
+			<y-m> -0.01</y-m>
+			<z-m>  0.60</z-m>
+			<roll-deg>90.0</roll-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/room-light[1]</state>
+			</parameters>
+		</overlay>
+	</model>
+
+	<model>
+		<name>Room Light3</name>
+		<path>Aircraft/L30/Models/light/roomlight3.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>Room Light3</object-name>
+		<type>select</type>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
+	</animation>
+	<model>
+		<name>Switch Light3</name>
+		<path>Aircraft/L30/Instruments/Parts/switch.xml</path>
+		<offsets>
+			<x-m>  7.79646</x-m>
+			<y-m>  0.91</y-m>
+			<z-m>  0.60</z-m>
+			<roll-deg>90.0</roll-deg>
+			<heading-deg>-90.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/room-light[2]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>Switch Light3b</name>
+		<path>Aircraft/L30/Instruments/Parts/switch.xml</path>
+		<offsets>
+			<x-m>  7.81647</x-m>
+			<y-m>  0.91</y-m>
+			<z-m>  0.60</z-m>
+			<roll-deg>90.0</roll-deg>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/room-light[2]</state>
+			</parameters>
+		</overlay>
+	</model>
+
+	<model>
+		<name>Room Light4</name>
+		<path>Aircraft/L30/Models/light/roomlight4.xml</path>
+		<offsets>
+			<x-m>0.0</x-m>
+			<y-m>0.0</y-m>
+			<z-m>0.0</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>Room Light4</object-name>
+		<type>select</type>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
+	</animation>
+	<model>
+		<name>Switch Light4</name>
+		<path>Aircraft/L30/Instruments/Parts/switch.xml</path>
+		<offsets>
+			<x-m>  9.96646</x-m>
+			<y-m>  0.80</y-m>
+			<z-m>  0.60</z-m>
+			<roll-deg>90.0</roll-deg>
+			<heading-deg>-90.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/room-light[3]</state>
+			</parameters>
+		</overlay>
+	</model>
+	<model>
+		<name>Switch Light4b</name>
+		<path>Aircraft/L30/Instruments/Parts/switch.xml</path>
+		<offsets>
+			<x-m>  9.98646</x-m>
+			<y-m>  0.80</y-m>
+			<z-m>  0.60</z-m>
+			<roll-deg>90.0</roll-deg>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+		<overlay>
+			<parameters>
+				<state>controls/lighting/room-light[3]</state>
+			</parameters>
+		</overlay>
+	</model>
+
+</PropertyList>

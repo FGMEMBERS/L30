@@ -1,0 +1,23 @@
+Version 1.4 released 07 January 2018
+
+Changes:
+- Removed dependency to SL20
+- Added historical correct pushback
+
+Version 1.3 released 04 January 2018
+
+Changes:
+- Applied changes contributed by Lester Boffo
+
+Version 1.2 released 29 December 2017
+
+Changes:
+- Added metric HUD
+
+Version 1.1 released 26 October 2017
+
+Changes:
+- Added Rembrandt interior lights
+- Better trimm balance
+
+First release 17 October 2017

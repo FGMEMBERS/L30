@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>FunkRoom.ac</path>
+<!--
+	<animation>
+		<type>select</type>
+		<object-name>red-light-plate</object-name>
+		<object-name>green-light-plate</object-name>
+		<object-name>white-light-plate</object-name>
+		<object-name>blue-light-plate</object-name>
+	</animation>
+	
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<object-name>lnd-light-plate</object-name>
+	</effect>
+	
+	<animation>
+		<type>select</type>
+		<object-name>lnd-light-plate</object-name>
+		<condition>
+			<equals>
+				<property>controls/lighting/landing-light</property>
+				<value> 1 </value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<animation>
+		<type>material</type>
+		<object-name>lnd-light-plate</object-name>
+		<emission>
+			<red>   0.027 </red>
+			<green> 0.027 </green>
+			<blue>  0.027 </blue>
+		</emission>
+	</animation>
+	-->
+	<animation>
+		<type>light</type>
+		<light-type>point</light-type>
+		<name>LightFront2</name>
+		<object-name>FunkRoom</object-name>
+		<nopreview/>
+		<position>
+			<x>6.39476</x>
+			<y>-0.28</y>
+			<z>1.87703</z>
+		</position>
+		<ambient>
+			<r>0.03</r>
+			<g>0.03</g>
+			<b>0.03</b>
+			<a>1.0</a>
+		</ambient>
+		<diffuse>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</diffuse>
+		<specular>
+			<r>0.5</r>
+			<g>0.5</g>
+			<b>0.5</b>
+			<a>1.0</a>
+		</specular>
+		<attenuation>
+			<c>1.0</c>
+			<l>0.002</l>
+			<q>0.00005</q>
+		</attenuation>
+		<near-m>0.05</near-m>
+		<far-m>3</far-m>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>FunkRoom</object-name>
+		<condition>
+			<equals>
+				<property>controls/lighting/room-light[1]</property>
+				<value> 1 </value>
+			</equals>
+		</condition>
+	</animation>
+</PropertyList>

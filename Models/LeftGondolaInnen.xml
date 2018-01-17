@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>LeftGondolaInnen.ac</path>
+	<offsets>
+		<x-m>   0.0 </x-m>
+		<y-m>   0.0 </y-m>
+		<z-m>   0.0 </z-m>
+	</offsets>
+
+	<model>
+		<name>Drehzahlmesser</name>
+		<path>Aircraft/L30/Instruments/rpm/tach02.xml</path>
+		<offsets>
+			<x-m>  2.73 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.51 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+</PropertyList>

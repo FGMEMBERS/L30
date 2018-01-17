@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<PropertyList>
+	<path>BackInterior.ac</path>
+	<offsets>
+		<x-m>   0.0 </x-m>
+		<y-m>   0.0 </y-m>
+		<z-m>   0.0 </z-m>
+	</offsets>
+
+	<model>
+		<name>Drehzahlmesser</name>
+		<path>Aircraft/L30/Instruments/rpm/tach04.xml</path>
+		<offsets>
+			<x-m>  4.64 </x-m>
+			<y-m> -0.59 </y-m>
+			<z-m>  0.24 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Drehzahlmesser</name>
+		<path>Aircraft/L30/Instruments/rpm/tach05.xml</path>
+		<offsets>
+			<x-m>  4.64 </x-m>
+			<y-m>  0.59 </y-m>
+			<z-m>  0.24 </z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Drehzahlmesser</name>
+		<path>Aircraft/L30/Instruments/rpm/tach06.xml</path>
+		<offsets>
+			<x-m>  8.40 </x-m>
+			<y-m>  0.00 </y-m>
+			<z-m>  0.24 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+</PropertyList>

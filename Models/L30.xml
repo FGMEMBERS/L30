@@ -1,0 +1,1597 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	
+	<path>L30.ac</path>
+	<offsets>
+		<!-- x/y/z == back/right/up -->
+		<x-m> 0.0 </x-m>
+		<y-m> 0.0 </y-m>
+		<z-m> 0.0 </z-m>
+	</offsets>
+	<nasal>
+		<load>
+			var livery_update = aircraft.livery_update.new("Aircraft/L30/Models/Liveries");
+			var rplayer = cmdarg();
+			rplayer.getNode("sim/model/door-positions/BDoor/position-norm", 1).alias(rplayer.getNode("sim/multiplay/generic/float[0]"));
+			rplayer.getNode("sim/model/door-positions/SDoor/position-norm", 1).alias(rplayer.getNode("sim/multiplay/generic/float[1]"));
+			rplayer.getNode("controls/engines/engine[0]/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[2]"));
+			rplayer.getNode("controls/engines/engine[1]/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[3]"));
+			rplayer.getNode("controls/engines/engine[2]/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[4]"));
+			rplayer.getNode("controls/engines/engine[3]/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[5]"));
+			rplayer.getNode("controls/engines/engine[4]/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[6]"));
+			rplayer.getNode("controls/engines/engine[5]/throttle", 1).alias(rplayer.getNode("sim/multiplay/generic/float[7]"));
+			rplayer.getNode("sim/weapons/spyoff", 1).alias(rplayer.getNode("sim/multiplay/generic/float[8]"));
+			rplayer.getNode("sim/weapons/spyscale", 1).alias(rplayer.getNode("sim/multiplay/generic/float[9]"));
+			rplayer.getNode("sim/weapons/spywinch", 1).alias(rplayer.getNode("sim/multiplay/generic/float[10]"));
+			rplayer.getNode("engines/engine[0]/running", 1).alias(rplayer.getNode("sim/multiplay/generic/int[0]"));
+			rplayer.getNode("engines/engine[1]/running", 1).alias(rplayer.getNode("sim/multiplay/generic/int[1]"));
+			rplayer.getNode("engines/engine[2]/running", 1).alias(rplayer.getNode("sim/multiplay/generic/int[2]"));
+			rplayer.getNode("engines/engine[3]/running", 1).alias(rplayer.getNode("sim/multiplay/generic/int[3]"));
+			rplayer.getNode("engines/engine[4]/running", 1).alias(rplayer.getNode("sim/multiplay/generic/int[4]"));
+			rplayer.getNode("engines/engine[5]/running", 1).alias(rplayer.getNode("sim/multiplay/generic/int[5]"));
+			if (!contains(globals, "L30"))
+			{
+				var base = "/L30/Systems/scenario-network.nas";
+				var file = props.globals.getNode("/sim/fg-root").getValue() ~ "/Aircraft" ~ base;
+				if (io.stat(file) != nil)
+				{
+					io.load_nasal(file, "L30");
+				}
+				else
+				{
+					foreach (var d; props.globals.getNode("/sim").getChildren("fg-aircraft"))
+					{
+						var file = d.getValue() ~ base;
+						if (io.stat(file) != nil)
+						{
+							io.load_nasal(file, "L30");
+							break;
+						}
+					}
+				}
+				# Use the minimal remote_ground_crew instead of ground_crew.
+				L30.ground_crew = L30.remote_ground_crew;
+				# Initialize scenario network as observer.
+				L30.scenario_network_init(0);
+				rplayer.getNode("sim/weapons/bomb[0]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[1]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[2]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[3]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[4]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[5]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[6]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[7]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[8]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[9]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[10]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[11]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[12]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[13]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[14]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[15]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[16]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[17]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[18]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[19]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[20]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[21]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[22]/present").setValue(1);
+				rplayer.getNode("sim/weapons/bomb[23]/present").setValue(1);
+			}
+		</load> 
+		<unload>
+			livery_update.stop();
+		</unload>
+	</nasal>
+
+	<animation>
+		<type>material</type>
+		<object-name>HuelleAussen</object-name>
+		<object-name>VerticalFins</object-name>
+		<object-name>HorizontalFins</object-name>
+		<object-name>Rudder</object-name>
+		<object-name>Elevator</object-name>
+		<object-name>BombDoorsFrontL</object-name>
+		<object-name>BombDoorsFrontR</object-name>
+		<object-name>BombDoorsMiddleL</object-name>
+		<object-name>BombDoorsMiddleR</object-name>
+		<object-name>BombDoorsBackL</object-name>
+		<object-name>BombDoorsBackR</object-name>
+		<object-name>ScarDoorL</object-name>
+		<object-name>ScarDoorR</object-name>
+		<object-name>Abdeckung</object-name>
+		<object-name>Abdeckung.001</object-name>
+		<property-base>sim/model/livery</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>texture.png</texture>
+	</animation>
+
+	<animation>
+		<!-- Objets opaques -->
+		<object-name>HuelleAussen</object-name>
+		<object-name>VerticalFins</object-name>
+		<object-name>HorizontalFins</object-name>
+		<object-name>Rudder</object-name>
+		<object-name>Elevator</object-name>
+		<!--	<object-name>Entlueftung</object-name> -->
+		<object-name>BombDoorsFrontL</object-name>
+		<object-name>BombDoorsFrontR</object-name>
+		<object-name>BombDoorsMiddleL</object-name>
+		<object-name>BombDoorsMiddleR</object-name>
+		<object-name>BombDoorsBackL</object-name>
+		<object-name>BombDoorsBackR</object-name>
+		<object-name>ScarDoorL</object-name>
+		<object-name>ScarDoorR</object-name>
+		<object-name>Abdeckung</object-name>
+		<object-name>Abdeckung.001</object-name>
+	</animation>
+
+	<!-- Rembrandt transparency markup. -->
+	<effect>
+		<inherits-from>Effects/glass</inherits-from>
+		<object-name>FrontGondolaWindows</object-name>
+		<object-name>SGondolaWindowsR</object-name>
+		<object-name>SGondolaWindowsL</object-name>
+		<object-name>BackGondolaWindows</object-name>
+		<object-name>SpycarWindows</object-name>
+		<object-name>LampeGlas</object-name>
+	</effect>
+	<effect>
+		<inherits-from>Effects/model-transparent</inherits-from>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
+		<object-name>GasCells</object-name>
+	<!--	<object-name>Gerippe</object-name>
+		<object-name>Keel</object-name> -->
+	</effect>
+	
+	<animation>
+		<type>noshadow</type>
+		<object-name>FrontGondolaWindows</object-name>
+		<object-name>SGondolaWindowsR</object-name>
+		<object-name>SGondolaWindowsL</object-name>
+		<object-name>BackGondolaWindows</object-name>
+		<object-name>SpycarWindows</object-name>
+		<object-name>LampeGlas</object-name>
+	</animation>
+	<effect>
+		<inherits-from>Models/Effects/opaque-alpha-test</inherits-from>
+		<object-name>FrontGondolaWindows</object-name>
+		<object-name>SGondolaWindowsR</object-name>
+		<object-name>SGondolaWindowsL</object-name>
+		<object-name>BackGondolaWindows</object-name>
+		<object-name>SpycarWindows</object-name>
+		<object-name>GasCells</object-name>
+		<object-name>LampeGlas</object-name>
+	<!--	<object-name>Gerippe</object-name>
+		<object-name>Keel</object-name> -->
+	</effect>
+
+	<!-- Volumetric shadow object =============================================-->
+	<!--
+	<model>
+	<name>shadow</name>
+	<path>Aircraft/L30/Models/shadow.xml</path>
+	<offsets>
+	<x-m> 0.00 </x-m>
+	<y-m> 0.00 </y-m>
+	<z-m> 0.00 </z-m>
+	</offsets>
+	</model>
+	-->
+
+	<model>
+		<name>Control car interior</name>
+		<path>Aircraft/L30/Models/L30-interior.xml</path>
+		<offsets>
+			<x-m>  21.45479 </x-m>
+			<y-m>   0.00 </y-m>
+			<z-m> -14.21412</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Left Gondola interior</name>
+		<path>Aircraft/L30/Models/LeftGondolaInnen.xml</path>
+		<offsets>
+			<x-m>  80.5739 </x-m>
+			<y-m>  -6.5 </y-m>
+			<z-m> -12.9657</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Right Gondola interior</name>
+		<path>Aircraft/L30/Models/RightGondolaInnen.xml</path>
+		<offsets>
+			<x-m>  80.5739 </x-m>
+			<y-m>   6.5 </y-m>
+			<z-m> -12.9657</z-m>
+		</offsets>
+	</model>
+
+	<model>
+		<name>Back Gondola interior</name>
+		<path>Aircraft/L30/Models/BackInterior.xml</path>
+		<offsets>
+			<x-m> 114.764 </x-m>
+			<y-m>   0.0 </y-m>
+			<z-m> -14.2141</z-m>
+		</offsets>
+	</model>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Leiter_Lang.003</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>L30.climbLadder();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Leiter_Lang.001</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>L30.climbLadder();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Leiter_Lang.002</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>L30.climbLadder();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Leiter_Lang.004</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>L30.climbLadder();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<type>pick</type>
+		<object-name>Leiter_Lang.005</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>nasal</command>
+				<script>L30.climbLadder();</script>
+			</binding>
+		</action>
+	</animation>
+
+	<model>
+		<name>Landig Light</name>
+		<path>Aircraft/L30/Models/light/light-cone.xml</path>
+		<offsets>
+			<x-m>  21.80 </x-m>
+			<y-m>   0.00 </y-m>
+			<z-m> -14.17 </z-m>
+			<pitch-deg> -9 </pitch-deg>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>Landig Light</object-name>
+		<type>select</type>
+		<condition>
+			<not>
+				<property>sim/rendering/rembrandt/enabled</property>
+			</not>
+		</condition>
+	</animation>
+	<model>
+		<name>Landig LightR</name>
+		<path>Aircraft/L30/Models/light/LandingLight-rembrandt.xml</path>
+		<offsets>
+			<x-m>  21.80 </x-m>
+			<y-m>   0.00 </y-m>
+			<z-m> -14.17 </z-m>
+			<pitch-deg> -9 </pitch-deg>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>Landig LightR</object-name>
+		<type>select</type>
+		<condition>
+			<property>sim/rendering/rembrandt/enabled</property>
+		</condition>
+	</animation>
+
+	<model>
+		<name>Fore propeller</name>
+		<path>Aircraft/L30/Models/propeller5mfx.xml</path>
+		<offsets>
+			<x-m>  37.102 </x-m>
+			<y-m>   0.00 </y-m>
+			<z-m> -14.58523 </z-m>
+		</offsets>
+		<overlay>
+			<parameters>
+				<engine-rpm>engines/engine[0]/rpm</engine-rpm>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>Left propeller</name>
+		<path>Aircraft/L30/Models/propeller5mfx.xml</path>
+		<offsets>
+			<x-m>  86.49001 </x-m>
+			<y-m>   -6.5 </y-m>
+			<z-m> -13.3 </z-m>
+		</offsets>
+		<overlay>
+			<parameters>
+				<engine-rpm>engines/engine[1]/rpm</engine-rpm>
+				<engine-dir>fdm/jsbsim/propulsion/engine[1]/yaw-angle-rad</engine-dir>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>Right propeller</name>
+		<path>Aircraft/L30/Models/propeller5mfx.xml</path>
+		<offsets>
+			<x-m>  86.49001 </x-m>
+			<y-m>   6.5 </y-m>
+			<z-m> -13.3 </z-m>
+		</offsets>
+		<overlay>
+			<parameters>
+				<engine-rpm>engines/engine[2]/rpm</engine-rpm>
+				<engine-dir>fdm/jsbsim/propulsion/engine[2]/yaw-angle-rad</engine-dir>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>AftL propeller</name>
+		<path>Aircraft/L30/Models/propeller5mfx.xml</path>
+		<offsets>
+			<x-m> 117.42812 </x-m>
+			<y-m> -11.64009 </y-m>
+			<z-m> -9.38264 </z-m>
+		</offsets>
+		<overlay>
+			<parameters>
+				<engine-rpm>engines/engine[3]/rpm</engine-rpm>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>AftR propeller</name>
+		<path>Aircraft/L30/Models/propeller5mfx.xml</path>
+		<offsets>
+			<x-m> 117.42812 </x-m>
+			<y-m>  11.64009 </y-m>
+			<z-m> -9.38264 </z-m>
+		</offsets>
+		<overlay>
+			<parameters>
+				<engine-rpm>engines/engine[4]/rpm</engine-rpm>
+			</parameters>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>Aft propeller</name>
+		<path>Aircraft/L30/Models/propeller5mfx.xml</path>
+		<offsets>
+			<x-m> 126.33862 </x-m>
+			<y-m>   0.00 </y-m>
+			<z-m> -14.79795 </z-m>
+		</offsets>
+		<overlay>
+			<parameters>
+				<engine-rpm>engines/engine[5]/rpm</engine-rpm>
+			</parameters>
+		</overlay>
+	</model>
+
+	<model>
+		<object-name>Exhaust</object-name>
+		<path>Aircraft/L30/Models/Effects/exhaust/exhaust.xml</path>
+		<offsets>
+			<x-m>35.50334</x-m>
+			<y-m>-0.56164</y-m>
+			<z-m>-14.54103</z-m>
+		</offsets>
+		<!-- <overlay>
+			<params>
+				<engine-throttle>controls/engines/engine[0]/throttle</engine-throttle>
+				<engine-running>engines/engine[0]/running</engine-running>
+			</params>
+		</overlay> -->
+	</model>
+	<model>
+		<object-name>Exhaust2</object-name>
+		<path>Aircraft/L30/Models/Effects/exhaust/exhaust1.xml</path>
+		<offsets>
+			<x-m>84.62077</x-m>
+			<y-m>-7.47703</y-m>
+			<z-m>-13.49256</z-m>
+		</offsets>
+		<!-- <overlay>
+			<params>
+				<engine-throttle>controls/engines/engine[0]/throttle</engine-throttle>
+				<engine-running>engines/engine[0]/running</engine-running>
+			</params>
+		</overlay> -->
+	</model>
+	<model>
+		<object-name>Exhaust3</object-name>
+		<path>Aircraft/L30/Models/Effects/exhaust/exhaust2.xml</path>
+		<offsets>
+			<x-m>84.62077</x-m>
+			<y-m> 7.47703</y-m>
+			<z-m>-13.49256</z-m>
+		</offsets>
+		<!-- <overlay>
+			<params>
+				<engine-throttle>controls/engines/engine[0]/throttle</engine-throttle>
+				<engine-running>engines/engine[0]/running</engine-running>
+			</params>
+		</overlay> -->
+	</model>
+	<model>
+		<object-name>Exhaust4</object-name>
+		<path>Aircraft/L30/Models/Effects/exhaust/exhaust3.xml</path>
+		<offsets>
+			<x-m>119.65946</x-m>
+			<y-m>-1.35312</y-m>
+			<z-m>-14.650362</z-m>
+		</offsets>
+		<!-- <overlay>
+			<params>
+				<engine-throttle>controls/engines/engine[0]/throttle</engine-throttle>
+				<engine-running>engines/engine[0]/running</engine-running>
+			</params>
+		</overlay> -->
+	</model>
+	<model>
+		<object-name>Exhaust5</object-name>
+		<path>Aircraft/L30/Models/Effects/exhaust/exhaust4.xml</path>
+		<offsets>
+			<x-m>119.65946</x-m>
+			<y-m> 1.35312</y-m>
+			<z-m>-14.65036</z-m>
+		</offsets>
+		<!-- <overlay>
+			<params>
+				<engine-throttle>controls/engines/engine[0]/throttle</engine-throttle>
+				<engine-running>engines/engine[0]/running</engine-running>
+			</params>
+		</overlay> -->
+	</model>
+	<model>
+		<object-name>Exhaust6</object-name>
+		<path>Aircraft/L30/Models/Effects/exhaust/exhaust5.xml</path>
+		<offsets>
+			<x-m>125.38299</x-m>
+			<y-m>0.68713</y-m>
+			<z-m>-14.65036</z-m>
+		</offsets>
+		<!-- <overlay>
+			<params>
+				<engine-throttle>controls/engines/engine[0]/throttle</engine-throttle>
+				<engine-running>engines/engine[0]/running</engine-running>
+			</params>
+		</overlay> -->
+	</model>
+
+	<!-- Control surface animations ===========================================-->
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Rudder</object-name>
+		<property>surface-positions/rudder-pos-norm</property>
+		<factor>20</factor>
+		<axis>
+			<x1-m> 184.79549 </x1-m>
+			<y1-m>   0.000 </y1-m>
+			<z1-m>  -7.445 </z1-m>
+			<x2-m> 184.79549 </x2-m>
+			<y2-m>   0.000 </y2-m>
+			<z2-m>   9.73581 </z2-m>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>Elevator</object-name>
+		<property>surface-positions/elevator-pos-norm</property>
+		<factor>20</factor>
+		<axis>
+			<x1-m> 183.68738 </x1-m>
+			<y1-m>  -9.5 </y1-m>
+			<z1-m>   0.30 </z1-m>
+			<x2-m> 183.68738 </x2-m>
+			<y2-m>   9.5 </y2-m>
+			<z2-m>   0.30 </z2-m>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>translate</type>
+		<object-name>Spycar</object-name>
+		<object-name>SpycarWindows</object-name>
+		<property>sim/weapons/spyoff</property>
+		<axis>
+			<x>0</x>
+			<y>0</y>
+			<z>1</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>scale</type>
+		<object-name>SpycarWire</object-name>
+		<property>sim/weapons/spyscale</property>
+		<x-factor>0.0</x-factor>
+		<y-factor>0.0</y-factor>
+		<z-factor>1.0</z-factor>
+		<x-offset>1.0</x-offset>
+		<y-offset>1.0</y-offset>
+		<z-offset>0.0</z-offset>
+		<center>
+			<x-m>87.8455</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-9.87673</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>WinchZeiger</object-name>
+		<property>sim/weapons/spyoff</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>50.9</dep>
+			</entry>
+			<entry>
+				<ind>-1000</ind>
+				<dep>-51.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  88.0995 </x-m>
+			<y-m>  1.47454 </y-m>
+			<z-m> -11.189 </z-m>
+		</center>
+		<axis>
+			<x>0.0</x>
+			<y>1.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>WinchGear</object-name>
+		<property>sim/weapons/spywinch</property>
+		<factor>30.0</factor>
+		<center>
+			<x-m>88.4107 </x-m>
+			<y-m> 1.08825 </y-m>
+			<z-m>-11.2771 </z-m>
+		</center>
+		<axis>
+			<x> 1.0 </x>
+			<y> 0.0 </y>
+			<z> 0.0 </z>
+		</axis>
+	</animation>
+	<animation>
+		<type>spin</type>
+		<object-name>WinchGear2</object-name>
+		<property>sim/weapons/spywinch</property>
+		<factor>-60.0</factor>
+		<center>
+			<x-m>88.4149 </x-m>
+			<y-m> 1.01333 </y-m>
+			<z-m>-11.3981 </z-m>
+		</center>
+		<axis>
+			<x> 0.0 </x>
+			<y> 1.0 </y>
+			<z> 0.0 </z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>ScarDoorL</object-name>
+		<property>sim/model/door-positions/SDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  88.8 </x-m>
+			<y-m> -0.65 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>ScarDoorR</object-name>
+		<property>sim/model/door-positions/SDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  88.8 </x-m>
+			<y-m>  0.65 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>BombDoorsFrontL</object-name>
+		<property>sim/model/door-positions/BDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  68.8 </x-m>
+			<y-m> -1.25 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>BombDoorsFrontR</object-name>
+		<property>sim/model/door-positions/BDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  68.8 </x-m>
+			<y-m>  1.25 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>BombDoorsMiddleL</object-name>
+		<property>sim/model/door-positions/BDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  73.8 </x-m>
+			<y-m> -1.25 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>BombDoorsMiddleR</object-name>
+		<property>sim/model/door-positions/BDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m>  73.8 </x-m>
+			<y-m>   1.25 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>BombDoorsBackL</object-name>
+		<property>sim/model/door-positions/BDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>-90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m> 103.8 </x-m>
+			<y-m>  -1.25 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>BombDoorsBackR</object-name>
+		<property>sim/model/door-positions/BDoor/position-norm</property>
+		<interpolation>
+			<entry>
+				<ind>0.0</ind>
+				<dep>0.0</dep>
+			</entry>
+			<entry>
+				<ind>1</ind>
+				<dep>90.0</dep>
+			</entry>
+		</interpolation>
+		<center>
+			<x-m> 103.8 </x-m>
+			<y-m>   1.25 </y-m>
+			<z-m> -11.85577 </z-m>
+		</center>
+		<axis>
+			<x>1.0</x>
+			<y>0.0</y>
+			<z>0.0</z>
+		</axis>
+	</animation>
+
+	<model>
+		<name>bomb0</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>67.59513</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb0</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[0]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	
+	<model>
+		<name>bomb1</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>67.59513</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb1</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[1]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb2</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>68.39511</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb2</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[2]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb3</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>68.39511</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb3</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[3]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb4</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>69.19485</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb4</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[4]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb5</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>69.19485</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb5</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[5]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb6</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>69.99506</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb6</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[6]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb7</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>69.99506</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb7</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[7]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb8</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>72.59513</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb8</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[8]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb9</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>72.59513</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb9</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[9]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb10</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>73.39511</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb10</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[10]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb11</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>73.39511</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb11</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[11]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb12</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>74.19485</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb12</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[12]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb13</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>74.19485</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb13</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[13]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb14</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>74.99506</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb14</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[14]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb15</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>74.99506</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb15</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[15]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb16</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>102.59513</x-m>
+			<y-m> 0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb16</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[16]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb17</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>102.59513</x-m>
+			<y-m>-0.576731</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb17</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[17]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb18</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>103.39511</x-m>
+			<y-m> 0.57721</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb18</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[18]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb19</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>103.39511</x-m>
+			<y-m>-0.57721</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb19</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[19]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb20</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>104.19485</x-m>
+			<y-m> 0.57721</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb20</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[20]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb21</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>104.19485</x-m>
+			<y-m>-0.57721</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb21</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[21]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb22</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>104.99506</x-m>
+			<y-m> 0.57721</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb22</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[22]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+	
+	<model>
+		<name>bomb23</name>
+		<path>Aircraft/L30/Models/bombe.xml</path>
+		<offsets>
+			<x-m>104.99506</x-m>
+			<y-m>-0.57721</y-m>
+			<z-m>-10.47001</z-m>
+		</offsets>
+	</model>
+	<animation>
+		<object-name>bomb23</object-name>
+		<type>select</type>
+		<condition>
+			<equals>
+				<property>sim/weapons/bomb[23]/present</property>
+				<value>1</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<model>
+		<name>Back-MG</name>
+		<path>Aircraft/L30/Models/bombable/mg.xml</path>
+		<offsets>
+			<x-m>189.90962</x-m>
+			<y-m> 0.00</y-m>
+			<z-m> 1.86669</z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Fore-MG1</name>
+		<path>Aircraft/L30/Models/bombable/mg.xml</path>
+		<offsets>
+			<x-m>22.80048</x-m>
+			<y-m> 0.00</y-m>
+			<z-m>11.03764</z-m>
+		</offsets>
+	</model>
+	<model>
+		<name>Fore-MG2</name>
+		<path>Aircraft/L30/Models/bombable/mg.xml</path>
+		<offsets>
+			<x-m>24.89802</x-m>
+			<y-m>-1.09693</y-m>
+			<z-m>11.03764</z-m>
+			<heading-deg>90.0</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>Fore-MG3</name>
+		<path>Aircraft/L30/Models/bombable/mg.xml</path>
+		<offsets>
+			<x-m>24.89802</x-m>
+			<y-m> 1.09693</y-m>
+			<z-m>11.03764</z-m>
+			<heading-deg>-90.0</heading-deg>
+		</offsets>
+	</model>
+	<model>
+		<name>BackGunner</name>
+		<path>Aircraft/L30/Models/GroundCrew/crew.xml</path>
+		<offsets>
+			<x-m>189.35 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m>  0.74462 </z-m>
+			<heading-deg>180.0</heading-deg>
+		</offsets>
+	</model>
+
+	<model>
+		<object-name>Water0</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>16.0</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>-8.37532</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[0]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water1</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>16.0</x-m>
+			<y-m>0.5</y-m>
+			<z-m>-8.37532</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[1]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water2</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>16.6</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>-8.46188</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[2]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water3</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>16.6</x-m>
+			<y-m>0.5</y-m>
+			<z-m>-8.46188</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[3]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water4</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>41.0</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>-11.31898</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[4]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water5</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>41.0</x-m>
+			<y-m>0.5</y-m>
+			<z-m>-11.31898</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[5]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water6</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>136.0</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>-10.41559</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[6]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water7</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>136.0</x-m>
+			<y-m>0.5</y-m>
+			<z-m>-10.41559</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[7]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water8</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>136.6</x-m>
+			<y-m>-0.5</y-m>
+			<z-m>-10.36814</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[8]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	<model>
+		<object-name>Water9</object-name>
+		<path>Aircraft/L30/Models/Effects/water.xml</path>
+		<offsets>
+			<x-m>136.6</x-m>
+			<y-m>0.5</y-m>
+			<z-m>-10.36814</z-m>
+		</offsets>
+		<overlay>
+			<params>
+				<water-trigger>controls/ballast/action[9]</water-trigger>
+			</params>
+		</overlay>
+	</model>
+	
+	<model>
+		<name>Pusher Man</name>
+		<path>Aircraft/L30/Models/GroundCrew/pusher-party.xml</path>
+		<offsets>
+			<x-m> 23.2979 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -15.2491 </z-m>
+		</offsets>
+		<condition>
+			<property>sim/model/pushback/enabled</property>
+<!--			<property>gear/gear[0]/wow</property> -->
+		</condition>
+	</model>
+	<model>
+		<name>Pusher Man2</name>
+		<path>Aircraft/L30/Models/GroundCrew/pusher-party2.xml</path>
+		<offsets>
+			<x-m> 117.344 </x-m>
+			<y-m>  0.000 </y-m>
+			<z-m> -16.0163 </z-m>
+		</offsets>
+		<condition>
+			<property>sim/model/pushback/enabled</property>
+<!--			<property>gear/gear[0]/wow</property> -->
+		</condition>
+	</model>
+	<!-- LOD for model parts ==================================================-->
+	<!--
+	<animation>
+		<type>range</type>
+		<object-name>Control car interior</object-name>
+		<min-m>0</min-m>
+		<max-m>1000</max-m>
+	</animation>
+	-->
+	<!--
+	
+	<animation>
+	<type>range</type>
+	<object-name>longitudal_girder.0</object-name>
+	<object-name>longitudal_girder.001</object-name>
+	<object-name>ring_girders</object-name>
+	<object-name>cell.1</object-name>
+	<object-name>cell.2</object-name>
+	<object-name>cell.3</object-name>
+	<object-name>cell.4</object-name>
+	<object-name>cell.5</object-name>
+	<object-name>cell.6</object-name>
+	<object-name>cell.7</object-name>
+	<object-name>cell.8</object-name>
+	<object-name>cell.9</object-name>
+	<object-name>cell.10</object-name>
+	<object-name>cell.11</object-name>
+	<object-name>cell.12</object-name>
+	<object-name>cell.13</object-name>
+	<min-m>0</min-m>
+	<max-m>1000</max-m>
+	</animation>
+	-->
+	<!--
+	<animation>
+	<type>range</type>
+	<object-name>BombrackBack</object-name>
+	<object-name>BombrackMiddle</object-name>
+	<object-name>BombrackFront</object-name>
+	<object-name>Laufgang</object-name>
+	<object-name>Keel</object-name>
+	<object-name>Gerippe</object-name>
+	<object-name>GasCells</object-name>
+	<object-name>HuelleInnen</object-name>
+	<min-m>0</min-m>
+	<max-m>250</max-m>
+	</animation>
+	-->
+	<animation>
+		<type>range</type>
+		<object-name>Left propeller</object-name>
+		<object-name>Right propeller</object-name>
+		<object-name>Fore propeller</object-name>
+		<object-name>AftL propeller</object-name>
+		<object-name>AftR propeller</object-name>
+		<object-name>Aft propeller</object-name>
+		<min-m>0</min-m>
+		<max-m>5000</max-m>
+	</animation>
+
+	<!-- LOD for the model as a whole =========================================-->
+	
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>20000</max-m>
+	</animation>
+
+</PropertyList>
